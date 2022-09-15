@@ -1,0 +1,97 @@
+:root{
+  --gold: #FFB900;
+  --yellow: #FFFF00;
+  --white-smoke: #E2DFD5;
+  --background:  #000000;
+  --gray: #465862;
+  --unit: 10px;
+  --container-width: 650px;
+}
+
+body {
+  background: var(--background);
+  margin: 0;
+  padding-top: 50px;
+  padding-left: 50px;
+}
+
+.container{
+  position: relative;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--unit);
+  overflow: hidden;
+}
+.container:hover::before{
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  opacity: .5;
+  background: red;
+}
+
+.container:hover{
+  border: 2px solid white;
+}
+
+.row{
+  height: var(--unit);
+  display: flex;
+  justify-content: center;
+  gap: var(--unit);
+  translate: var(--offset);
+  animation: load-row 1s calc(var(--delay ) * 100ms + 500ms)  forwards;
+}
+
+
+.cell {
+  height: 100%;
+  width: calc(var(--size, 2) * var(--unit));
+  background-color: var(--gray);
+  border-radius: 1000px;
+}
+
+.cell.size-3 { --size: 2;}
+.cell.size-4 { --size: 4;}
+.cell.size-6 { --size: 6;}
+.cell.size-8 { --size: 8;}
+.cell.size-10 { --size: 10;}
+.cell.size-12 { --size: 12;}
+.cell.size-14 { --size: 14;}
+.cell.size-16 { --size: 16;}
+.cell.size-18 { --size: 18;}
+
+
+.cell.gold { background-color: var(--gold)}
+.cell.yellow { background-color: var(--yellow)}
+
+.row:nth-child(1){--delay: 1; --offset: 150px;}
+.row:nth-child(2){--delay: 2; --offset: -150px;}
+.row:nth-child(3){--delay: 3; --offset: 200px;}
+.row:nth-child(4){--delay: 4; --offset: -150px;}
+.row:nth-child(5){--delay: 5; --offset: 150px;}
+.row:nth-child(6){--delay: 6; --offset: -150px; }
+.row:nth-child(7){--delay: 7; --offset: 150px;}
+.row:nth-child(8){--delay: 8; --offset: -150px;}
+.row:nth-child(9){--delay: 9; --offset: 150px;}
+.row:nth-child(10){--delay: 10; --offset: -150px;}
+.row:nth-child(11){--delay: 11; --offset: 200px;}
+.row:nth-child(12){--delay: 12; --offset: -150px;}
+.row:nth-child(13){--delay: 13; --offset: 150px;}
+.row:nth-child(14){--delay: 14; --offset: -150px;}
+.row:nth-child(15){--delay: 15; --offset: 150px;}
+.row:nth-child(16){--delay: 16; --offset: -150px;}
+.row:nth-child(17){--delay: 17; --offset: 150px;}
+.row:nth-child(18){--delay: 18; --offset: -150px;}
+.row:nth-child(19){--delay: 19; --offset: 150px;}
+
+
+
+
+@keyframes load-row {
+    100% {
+      translate: 0;
+    }
+}
